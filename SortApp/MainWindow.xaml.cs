@@ -115,5 +115,10 @@ namespace SortApp
                 tokenSource.Cancel();
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            btnStop_Click(null, null);
+        }
     }
 }
