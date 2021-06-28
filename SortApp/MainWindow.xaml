@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SortApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="SortApp" Height="500" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ComboBox x:Name="cboxAlgo" Width="150" Height="25" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
+            <ComboBoxItem Content="BubbleSort"></ComboBoxItem>
+            <ComboBoxItem Content="SelectionSort"></ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="btnGenerate" Content="Generate" Width="150" Height="25" Grid.Column="2" Grid.Row="0" Click="btnGenerate_Click"></Button>
+        <Button x:Name="btnStart" Content="Start" Width="150" Height="25" Grid.Column="3" Grid.Row="0" Click="btnStart_Click"></Button>
+        <Button x:Name="btnStop" Content="Stop" Width="150" Height="25" Grid.Column="4" Grid.Row="0" Click="btnStop_Click"></Button>
+
+        <Canvas x:Name="cvsGraphic" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4"></Canvas>
     </Grid>
 </Window>
