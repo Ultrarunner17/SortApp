@@ -84,6 +84,9 @@ namespace SortApp
                 case 1:
                     engine = new EngineSelectionSort();
                     break;
+                case 2:
+                    engine = new EngineInsertionSort();
+                    break;
                 default:
                     break;
             }
@@ -101,10 +104,6 @@ namespace SortApp
             catch (OperationCanceledException ex)
             {
                 Console.WriteLine($"{nameof(OperationCanceledException)} thrown with message: {ex.Message}");
-            }
-            finally
-            {
-                tokenSource.Dispose();
             }
         }
 

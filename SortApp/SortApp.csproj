@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EngineInsertionSort.cs" />
     <Compile Include="EngineSelectionSort.cs" />
     <Compile Include="UIEngine.cs" />
     <Page Include="MainWindow.xaml">
