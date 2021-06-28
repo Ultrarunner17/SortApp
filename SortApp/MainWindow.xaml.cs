@@ -91,7 +91,7 @@ namespace SortApp
             }
             catch (OperationCanceledException ex)
             {
-                Console.WriteLine($"{nameof(OperationCanceledException)} thrown with message: {ex.Message}");
+                Console.WriteLine($"{nameof(OperationCanceledException)} with message: {ex.Message}");
             }
         }
 

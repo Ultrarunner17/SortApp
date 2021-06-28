@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SortApp"
         mc:Ignorable="d"
-        Title="SortApp" Height="500" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Background="#264653">
+        Title="SortApp" Height="500" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Background="#264653" MinWidth="400" MinHeight="300">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"></ColumnDefinition>
@@ -22,14 +22,14 @@
             <RowDefinition Height="10"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="cboxAlgo" Width="150" Height="25" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
+        <ComboBox x:Name="cboxAlgo" Width="100" Height="25" Grid.Column="1" Grid.Row="0" SelectedIndex="0">
             <ComboBoxItem Content="BubbleSort"></ComboBoxItem>
             <ComboBoxItem Content="SelectionSort"></ComboBoxItem>
             <ComboBoxItem Content="InsertionSort"></ComboBoxItem>
         </ComboBox>
-        <Button x:Name="btnGenerate" Content="Generate" Width="150" Height="25" Grid.Column="2" Grid.Row="0" Click="btnGenerate_Click" Background="#E76F51" Foreground="#264653"></Button>
-        <Button x:Name="btnStart" Content="Start" Width="150" Height="25" Grid.Column="3" Grid.Row="0" Click="btnStart_Click" Background="#E76F51" Foreground="#264653"></Button>
-        <Button x:Name="btnStop" Content="Stop" Width="150" Height="25" Grid.Column="4" Grid.Row="0" Click="btnStop_Click" Background="#E76F51" Foreground="#264653"></Button>
+        <Button x:Name="btnGenerate" Content="Generate" Width="85" Height="25" Grid.Column="2" Grid.Row="0" Click="btnGenerate_Click" Background="#E76F51" Foreground="#264653"></Button>
+        <Button x:Name="btnStart" Content="Start" Width="85" Height="25" Grid.Column="3" Grid.Row="0" Click="btnStart_Click" Background="#E76F51" Foreground="#264653"></Button>
+        <Button x:Name="btnStop" Content="Stop" Width="85" Height="25" Grid.Column="4" Grid.Row="0" Click="btnStop_Click" Background="#E76F51" Foreground="#264653"></Button>
 
         <Canvas x:Name="cvsGraphic" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Background="#264653"></Canvas>
     </Grid>

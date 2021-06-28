@@ -8,6 +8,13 @@ namespace SortApp
         private UIEngine uiEngine;
         private bool running = false;
 
+        /// <summary>
+        /// Compute Bubble sort algo
+        /// </summary>
+        /// <param name="array">Array of int to sort</param>
+        /// <param name="ui">UI engine to use to visualize during sorting</param>
+        /// <param name="token">Cancellation token used to cancel the task if needed</param>
+        /// <returns>Int array sorted</returns>
         public int[] Compute(int[] array, UIEngine ui, CancellationToken token)
         {
             running = true;
@@ -39,18 +46,27 @@ namespace SortApp
 
             running = false;
             return data;
-        } 
+        }
 
+        /// <summary>
+        /// Swap values between two items
+        /// </summary>
+        /// <param name="first">Index of first item</param>
+        /// <param name="second">Index of second item</param>
         private void Swap(int first, int second)
         {
             int temp = data[first];
             data[first] = data[second];
-            uiEngine.ChangeLineValue(first, data[second], uiEngine.graphic);
+            uiEngine.ChangeLineValue(first, data[second]);
 
             data[second] = temp;
-            uiEngine.ChangeLineValue(second, temp, uiEngine.graphic);
+            uiEngine.ChangeLineValue(second, temp);
         }
 
+        /// <summary>
+        /// Tells if the sorting is running
+        /// </summary>
+        /// <returns>True if running, False if not </returns>
         public bool IsRunning()
         {
             return running;

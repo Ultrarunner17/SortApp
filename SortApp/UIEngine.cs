@@ -7,17 +7,23 @@ namespace SortApp
 {
     public class UIEngine
     {
-        public Canvas graphic;
+        private Canvas graphic;
         private int numberOfItems;
         private int[] data;
         private Line[] lines;
         private int _lineThickness;
+
+
         public UIEngine(Canvas cvsGraphic, int lineThickness)
         {
             graphic = cvsGraphic;
             _lineThickness = lineThickness;
         }
 
+        /// <summary>
+        /// Initialize the graphic
+        /// </summary>
+        /// <param name="array">Data used</param>
         public void DrawGraphic(int[] array)
         {
             data = array;
@@ -40,7 +46,12 @@ namespace SortApp
             }
         }
 
-        public void ChangeLineValue(int index, int newValue, Canvas graphic)
+        /// <summary>
+        /// Update the value of one line
+        /// </summary>
+        /// <param name="index">Index of the line to update</param>
+        /// <param name="newValue">The new value</param>
+        public void ChangeLineValue(int index, int newValue)
         {
             graphic.Dispatcher.Invoke(() =>
             {
@@ -51,6 +62,11 @@ namespace SortApp
             });
         }
 
+        /// <summary>
+        /// Update the line's color
+        /// </summary>
+        /// <param name="index">Index of the line to update</param>
+        /// <param name="color">The new color</param>
         public void ChangeLineColor(int index, Color color)
         {
             graphic.Dispatcher.Invoke(() =>
@@ -59,6 +75,11 @@ namespace SortApp
             });
         }
 
+        /// <summary>
+        /// Convert the enum Color to Brush color
+        /// </summary>
+        /// <param name="c">Color enum</param>
+        /// <returns>The Brush corresponding</returns>
         private Brush GetBrush(Color c)
         {
             Brush output;
