@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 
 namespace SortApp
 {
@@ -23,7 +18,7 @@ namespace SortApp
             {
                 for (int j = i + 1; j > 0; j--)
                 {
-                    uiEngine.ChangeLineColor(j - 1, Color.Blue);
+                    uiEngine.ChangeLineColor(j - 1, Color.Yellow);
                     if (data[j - 1] > data[j])
                     {
                         int temp = data[j - 1];
@@ -33,7 +28,7 @@ namespace SortApp
                         uiEngine.ChangeLineValue(j, temp, uiEngine.graphic);
                     }
                     Thread.Sleep(15);
-                    uiEngine.ChangeLineColor(j - 1, Color.Black);
+                    uiEngine.ChangeLineColor(j - 1, Color.Orange);
                     if (token.IsCancellationRequested)
                     {
                         running = false;

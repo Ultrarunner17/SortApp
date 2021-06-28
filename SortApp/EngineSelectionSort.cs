@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 
 namespace SortApp
 {
@@ -29,10 +24,10 @@ namespace SortApp
                 uiEngine.ChangeLineColor(minIndex, Color.Red);
                 for (int j = indexFirstUnsortedItem; j < data.Length; j++)
                 {
-                    uiEngine.ChangeLineColor(j, Color.Blue);
+                    uiEngine.ChangeLineColor(j, Color.Yellow);
                     if (data[j] <=    minValue)
                     {
-                        uiEngine.ChangeLineColor(minIndex, Color.Black);
+                        uiEngine.ChangeLineColor(minIndex, Color.Orange);
                         minValue = data[j];
                         minIndex = j;
                         uiEngine.ChangeLineColor(minIndex, Color.Red);
@@ -40,7 +35,7 @@ namespace SortApp
                     Thread.Sleep(15);
                     if (minIndex != j)
                     {
-                        uiEngine.ChangeLineColor(j, Color.Black);
+                        uiEngine.ChangeLineColor(j, Color.Orange);
                     }
                     if (token.IsCancellationRequested)
                     {
@@ -49,7 +44,7 @@ namespace SortApp
                     }
                 }
                 Swap(indexFirstUnsortedItem, minIndex);
-                uiEngine.ChangeLineColor(minIndex, Color.Black);
+                uiEngine.ChangeLineColor(minIndex, Color.Orange);
                 uiEngine.ChangeLineColor(indexFirstUnsortedItem, Color.Green);
                 indexFirstUnsortedItem++;
             }

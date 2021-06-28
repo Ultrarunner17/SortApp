@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Shapes;
-using System.Windows.Threading;
 
 namespace SortApp
 {
@@ -35,11 +30,11 @@ namespace SortApp
                 lines[i] = new Line();
                 lines[i].Visibility = Visibility.Visible;
                 lines[i].StrokeThickness = _lineThickness;
-                lines[i].Stroke = System.Windows.Media.Brushes.Black;
+                lines[i].Stroke = GetBrush(Color.Orange);
                 lines[i].X1 = i * _lineThickness;
                 lines[i].X2 = i * _lineThickness;
-                lines[i].Y1 = 0;
-                lines[i].Y2 = data[i];
+                lines[i].Y1 = (int)graphic.ActualHeight;
+                lines[i].Y2 = (int)graphic.ActualHeight - data[i];
 
                 graphic.Children.Add(lines[i]);
             }
@@ -51,8 +46,8 @@ namespace SortApp
             {
                 lines[index].X1 = index * _lineThickness;
                 lines[index].X2 = index * _lineThickness;
-                lines[index].Y1 = 0;
-                lines[index].Y2 = newValue;
+                lines[index].Y1 = (int)graphic.ActualHeight;
+                lines[index].Y2 = (int)graphic.ActualHeight - newValue;
             });
         }
 
@@ -64,26 +59,26 @@ namespace SortApp
             });
         }
 
-        private System.Windows.Media.Brush GetBrush(Color c)
+        private Brush GetBrush(Color c)
         {
-            System.Windows.Media.Brush output;
+            Brush output;
 
             switch (c)
             {
-                case Color.Blue:
-                    output = System.Windows.Media.Brushes.Blue;
+                case Color.Yellow:
+                    output = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#E9C46A"));
                     break;
                 case Color.Red:
-                    output = System.Windows.Media.Brushes.Red;
+                    output = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#d00000"));
                     break;
                 case Color.Green:
-                    output = System.Windows.Media.Brushes.Green;
+                    output = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#2d6a4f"));
                     break;
-                case Color.Black:
-                    output = System.Windows.Media.Brushes.Black;
+                case Color.Orange:
+                    output = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#E76F51")); 
                     break;
                 default:
-                    output = System.Windows.Media.Brushes.Black;
+                    output = new SolidColorBrush((System.Windows.Media.Color)ColorConverter.ConvertFromString("#E76F51"));
                     break;
             }
 
@@ -93,9 +88,9 @@ namespace SortApp
 
     public enum Color
     {
-        Blue,
+        Yellow,
         Red,
         Green,
-        Black
+        Orange
     }
 }

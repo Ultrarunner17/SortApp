@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Shapes;
+﻿using System.Threading;
 
 namespace SortApp
 {
@@ -27,13 +19,13 @@ namespace SortApp
             {
                 for (int j = 0; j < indexOfLastUnsortedItem; j++)
                 {
-                    uiEngine.ChangeLineColor(j + 1, Color.Blue);
+                    uiEngine.ChangeLineColor(j + 1, Color.Yellow);
                     if (data[j] > data[j + 1])
                     {
                         Swap(j, j + 1);
                     }
                     Thread.Sleep(15);
-                    uiEngine.ChangeLineColor(j + 1, Color.Black);
+                    uiEngine.ChangeLineColor(j + 1, Color.Orange);
 
                     if (token.IsCancellationRequested)
                     {
